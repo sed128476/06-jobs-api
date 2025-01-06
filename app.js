@@ -1,4 +1,3 @@
-//mongodb+srv://sarah:Sedna128@cluster0.cap6g.mongodb.net/06-JOBS-API?retryWrites=true&w=majority&appName=Cluster0
 require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
