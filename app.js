@@ -42,6 +42,8 @@ app.use(rateLimiter({ windowMs: 60 * 1000, ax: 60 }))
 app.get('/', (req, res) => {
   res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
 });
+
+app.use(express.static("public"));
 // extra packages
 
 // routes
