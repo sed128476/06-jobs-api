@@ -31,6 +31,7 @@ import { showLoginRegister, handleLoginRegister } from "./loginRegister.js";
 import { handleLogin } from "./login.js";
 import { handleAddEdit } from "./addEdit.js";
 import { handleRegister } from "./register.js";
+import { handleDeleteJob } from "./deleteJob.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   token = localStorage.getItem("token");
@@ -40,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   handleJobs();
   handleRegister();
   handleAddEdit();
+  handleDeleteJob();
+  
   if (token) {
     showJobs();
   } else {

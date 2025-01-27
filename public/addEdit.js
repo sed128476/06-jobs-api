@@ -1,11 +1,13 @@
 import { enableInput, inputEnabled, message, setDiv, token } from "./index.js";
 import { showJobs } from "./jobs.js";
 
+
 let addEditDiv = null;
 let company = null;
 let position = null;
 let status = null;
 let addingJob = null;
+let deleteingjob = null;
 
 export const handleAddEdit = () => {
   addEditDiv = document.getElementById("edit-job");
@@ -13,19 +15,32 @@ export const handleAddEdit = () => {
   position = document.getElementById("position");
   status = document.getElementById("status");
   addingJob = document.getElementById("adding-job");
+  deleteingjob = document.getElementsByClassName("deleteButton")
+
+  console.log("first:" ,(deleteingjob.textContent));
+  
+
   const editCancel = document.getElementById("edit-cancel");
 
   addEditDiv.addEventListener("click", async (e) => {
+     
     if (inputEnabled && e.target.nodeName === "BUTTON") {
       if (e.target === addingJob) {
+      
+        
         enableInput(false);
 
         let method = "POST";
         let url = "/api/v1/jobs";
+        console.log(url);
+        console.log(("secound", addingJob.textContent));
+  
 
         if (addingJob.textContent === "update") {
           method = "PATCH";
           url = `/api/v1/jobs/${addEditDiv.dataset.id}`;
+          console.log("third");
+          
         }
 
         try {
@@ -73,6 +88,8 @@ export const handleAddEdit = () => {
 };
 
 export const showAddEdit = async (jobId) => {
+  console.log(!jobId);
+  
   if (!jobId) {
     company.value = "";
     position.value = "";
