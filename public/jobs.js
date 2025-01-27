@@ -8,6 +8,7 @@ import {
   } from "./index.js";
   import { showLoginRegister } from "./loginRegister.js";
   import { showAddEdit } from "./addEdit.js";
+  import  { handleDeleteJob }  from  "./deleteJob.js"
   
   let jobsDiv = null;
   let jobsTable = null;
@@ -84,4 +85,5 @@ import {
     }
     enableInput(true);
     setDiv(jobsDiv);
+    handleDeleteJob();
   };
