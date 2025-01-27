@@ -15,7 +15,7 @@ export const handleDeleteJob = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-
+        /*
         // Check if the response is OK (status code 200-299)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -27,7 +27,7 @@ export const handleDeleteJob = () => {
         if (responseText) {
           data = JSON.parse(responseText);
         }
-
+        */
         message.textContent = "The job entry was deleted.";
         showJobs();
       } catch (err) {
